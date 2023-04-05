@@ -1,0 +1,480 @@
+input GeoBoudingBoxInput {
+  topLeftGeom: [Float]
+  bottomRightGeom: [Float]
+}
+
+input GeoDistanceMapInput {
+  distance: String
+  geom: GeomInput
+}
+
+type GeoResponse {
+  name: String
+  projGeoDataReference: GeomType
+}
+
+type GeoResponseList {
+  items: [GeoResponse]
+}
+
+input GeomInput {
+  lat: Float
+  lon: Float
+}
+
+type GeomType {
+  geom: [Float]
+}
+
+input MapQueryInput {
+  geoDistance: GeoDistanceMapInput
+  geoBoundingBox: GeoBoudingBoxInput
+}
+
+type MinMaxRange {
+  minprice: Float
+  maxprice: Float
+  minarea: Float
+  maxarea: Float
+}
+
+type Mutation {
+  createPartnerRec(input: PartnerMInput!): PartnerRec
+  updatePartnerRec(input: PartnerMInput!): PartnerRec
+  deletePartnerRec(input: PartnerMDelInput!): PartnerRec
+}
+
+type OSRes {
+  items: String
+}
+
+input PartnerMDelInput {
+  PK: String!
+  SK: String!
+}
+
+input PartnerMInput {
+  PK: String!
+  PK1: String
+  PK2: String
+  PK3: String
+  SK: String!
+  SK1: String
+  SK2: Int
+  SK3: String
+  gid: String
+  id: String
+  itemType: String
+  orgName: String
+  orgLegalName: String
+  orgShortName: String
+  orgSlug: String
+  orgContactDetails: AWSJSON
+  orgAddressDetails: AWSJSON
+  orgBusinessDetails: AWSJSON
+  orgBrandDetails: AWSJSON
+  orgStatus: String
+  orgAggregates: [AWSJSON]
+  isVerifiedOrg: Boolean
+  projName: String
+  projShortName: String
+  projSlug: String
+  projDescription: String
+  projContactDetails: AWSJSON
+  projCategory: String
+  propertyCategories: [AWSJSON]
+  tags: [AWSJSON]
+  projBrandDetails: AWSJSON
+  projStatus: String
+  projAggregates: [AWSJSON]
+  projLaunchDate: AWSDate
+  projCompletedDate: AWSDate
+  authorities: [AWSJSON]
+  projGeoDataReference: AWSJSON
+  projConfiguration: AWSJSON
+  projAddress: AWSJSON
+  projArea: AWSJSON
+  photos: [AWSJSON]
+  videos: [AWSJSON]
+  views360: [AWSJSON]
+  virtualTours: [AWSJSON]
+  tlTales: AWSJSON
+  documents: [AWSJSON]
+  pricingConfig: AWSJSON
+  subscriptionLevel: String
+  projVisibility: Boolean
+  zoneName: String
+  zoneShortName: String
+  zoneSlug: String
+  zoneLaunchDate: AWSDate
+  zoneVisibility: String
+  plotName: String
+  plotSlug: String
+  plotGeoDataReference: AWSJSON
+  plotStatus: String
+  plotAreaDetails: AWSJSON
+  plotBasePrice: Int
+  plotPrice: Int
+  plotFacing: [AWSJSON]
+  plotConfiguration: AWSJSON
+  plotLatestTransaction: AWSJSON
+  ownershipType: String
+  ownershipPercentage: String
+  enquiryDate: AWSDate
+  enquiryDesc: String
+  enquiryFirstName: String
+  enquiryLastName: String
+  enquiryPhone: String
+  enquiryEmail: String
+  enquiryConsentDeatils: AWSJSON
+  enquiryStatus: Boolean
+  enquiryType: String
+  userFirstName: String
+  userLaststName: String
+  userEmail: String
+  userPhone: Int
+  userVisibility: String
+  userCognitoID: String
+  userConsentDeatils: AWSJSON
+}
+
+type PartnerRec {
+  PK: String!
+  PK1: String
+  PK2: String
+  PK3: String
+  SK: String!
+  SK1: String
+  SK2: Int
+  SK3: String
+  gid: String
+  id: String
+  minMaxRange: MinMaxRange
+  itemType: String
+  orgName: String
+  orgLegalName: String
+  orgShortName: String
+  orgSlug: String
+  orgContactDetails: AWSJSON
+  orgAddressDetails: AWSJSON
+  orgBusinessDetails: AWSJSON
+  orgBrandDetails: AWSJSON
+  orgStatus: String
+  orgAggregates: [AWSJSON]
+  isVerifiedOrg: Boolean
+  projName: String
+  projShortName: String
+  projSlug: String
+  projDescription: String
+  projContactDetails: AWSJSON
+  projCategory: String
+  propertyCategories: [AWSJSON]
+  tags: [AWSJSON]
+  projBrandDetails: AWSJSON
+  projStatus: String
+  projAggregates: [AWSJSON]
+  projLaunchDate: AWSDate
+  projCompletedDate: AWSDate
+  authorities: [AWSJSON]
+  projGeoDataReference: AWSJSON
+  projConfiguration: AWSJSON
+  projAddress: AWSJSON
+  projArea: AWSJSON
+  photos: [AWSJSON]
+  videos: [AWSJSON]
+  views360: [AWSJSON]
+  virtualTours: [AWSJSON]
+  tlTales: AWSJSON
+  documents: [AWSJSON]
+  pricingConfig: AWSJSON
+  subscriptionLevel: String
+  projVisibility: Boolean
+  zoneName: String
+  zoneShortName: String
+  zoneSlug: String
+  zoneLaunchDate: AWSDate
+  zoneVisibility: String
+  plotName: String
+  plotSlug: String
+  plotGeoDataReference: AWSJSON
+  plotStatus: String
+  plotAreaDetails: AWSJSON
+  plotBasePrice: Int
+  plotPrice: Int
+  plotFacing: [AWSJSON]
+  plotConfiguration: AWSJSON
+  plotLatestTransaction: AWSJSON
+  ownershipType: String
+  ownershipPercentage: String
+  enquiryDate: AWSDate
+  enquiryDesc: String
+  enquiryFirstName: String
+  enquiryLastName: String
+  enquiryPhone: String
+  enquiryEmail: String
+  enquiryConsentDeatils: AWSJSON
+  enquiryStatus: Boolean
+  enquiryType: String
+  userFirstName: String
+  userLaststName: String
+  userEmail: String
+  userPhone: Int
+  userVisibility: String
+  userCognitoID: String
+  userConsentDeatils: AWSJSON
+}
+
+type PartnerRecList @aws_api_key @aws_cognito_user_pools {
+  items: [PartnerRec]
+  nextToken: String
+}
+
+type PropRes {
+  data: [PartnerRec]
+  aggregations: AWSJSON
+}
+
+type PropertyRec {
+  gid: String
+  id: String
+  projName: String
+  photos: [AWSJSON]
+  orgName: String
+  projAggregates: [AWSJSON]
+  totalPlots: Int
+  totalSold: Int
+  plotPrice: Int
+  projGeoDataReference: AWSJSON
+  projStatus: String
+}
+
+type Query {
+  getGeojson(
+    service: String!
+    version: String!
+    request: String!
+    typeName: String!
+    maxFeatures: Int
+    outputFormat: String!
+    cql_filter: String
+  ): AWSJSON @aws_api_key @aws_cognito_user_pools
+  getTlandsRec(PK: String!, SK: String!): PartnerRec
+  searchTlands(query: AWSJSON): [PartnerRec]
+  searchOnMapOld(searchType: String, query: MapQueryInput): PropRes
+  searchOnMap(searchType: String, query: MapQueryInput): PropRes
+  search(query: String): [TagResponse]
+  searchTlandsnew(
+    indexName: String
+    searchType: String
+    queryField: String
+    queryValue: String
+  ): [PartnerRec]
+  searchOnItem(itemType: String, queryField: String): OSRes
+  queryTlandsByPK(
+    filter: QueryFilterInput
+    limit: Int
+    nextToken: String
+  ): PartnerRecList
+  queryTlandsByGS1(
+    filter: QueryGS1FilterInput
+    limit: Int
+    nextToken: String
+  ): PartnerRecList
+  queryTlandsByGS3(
+    filter: QueryGS3FilterInput
+    limit: Int
+    nextToken: String
+  ): PartnerRecList
+  queryTlandsByGS2(
+    filter: QueryGS2FilterInput
+    limit: Int
+    nextToken: String
+  ): PartnerRecList
+}
+
+input QueryFilterInput {
+  PK: QueryStringFilterInput
+  SK: QueryStringFilterInput
+}
+
+input QueryGS1FilterInput {
+  PK1: QueryStringFilterInput
+  SK1: QueryStringFilterInput
+}
+
+input QueryGS2FilterInput {
+  PK2: QueryStringFilterInput
+  SK2: QueryIntFilterInput
+}
+
+input QueryGS3FilterInput {
+  PK3: QueryStringFilterInput
+  SK3: QueryStringFilterInput
+}
+
+input QueryIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input QueryStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+type Subscription {
+  onCreateDevTlands(
+    PK: String
+    PK1: String
+    PK2: String
+    PK3: String
+    SK: String
+  ): PartnerRec @aws_subscribe(mutations: ["createPartnerRec"])
+  onUpdateDevTlands(
+    PK: String
+    PK1: String
+    PK2: String
+    PK3: String
+    SK: String
+  ): PartnerRec @aws_subscribe(mutations: ["updatePartnerRec"])
+  onDeleteDevTlands(
+    PK: String
+    PK1: String
+    PK2: String
+    PK3: String
+    SK: String
+  ): PartnerRec @aws_subscribe(mutations: ["deletePartnerRec"])
+}
+
+input TableBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input TableDevTlandsFilterInput {
+  PK: TableStringFilterInput
+  PK1: TableStringFilterInput
+  PK2: TableStringFilterInput
+  PK3: TableStringFilterInput
+  SK: TableStringFilterInput
+  SK1: TableStringFilterInput
+  SK2: TableIntFilterInput
+  SK3: TableStringFilterInput
+  gid: TableStringFilterInput
+  id: TableStringFilterInput
+  itemType: TableStringFilterInput
+  orgName: TableStringFilterInput
+  orgLegalName: TableStringFilterInput
+  orgShortName: TableStringFilterInput
+  orgSlug: TableStringFilterInput
+  orgStatus: TableStringFilterInput
+  isVerifiedOrg: TableBooleanFilterInput
+  projName: TableStringFilterInput
+  projShortName: TableStringFilterInput
+  projSlug: TableStringFilterInput
+  projDescription: TableStringFilterInput
+  projCategory: TableStringFilterInput
+  projStatus: TableStringFilterInput
+  projLaunchDate: TableStringFilterInput
+  projCompletedDate: TableStringFilterInput
+  subscriptionLevel: TableStringFilterInput
+  projVisibility: TableBooleanFilterInput
+  zoneName: TableStringFilterInput
+  zoneShortName: TableStringFilterInput
+  zoneSlug: TableStringFilterInput
+  zoneLaunchDate: TableStringFilterInput
+  zoneVisibility: TableStringFilterInput
+  plotName: TableStringFilterInput
+  plotSlug: TableStringFilterInput
+  plotStatus: TableStringFilterInput
+  plotBasePrice: TableIntFilterInput
+  plotPrice: TableIntFilterInput
+  ownershipType: TableStringFilterInput
+  ownershipPercentage: TableStringFilterInput
+  enquiryDate: TableStringFilterInput
+  enquiryDesc: TableStringFilterInput
+  enquiryFirstName: TableStringFilterInput
+  enquiryLastName: TableStringFilterInput
+  enquiryPhone: TableStringFilterInput
+  enquiryEmail: TableStringFilterInput
+  enquiryStatus: TableBooleanFilterInput
+  enquiryType: TableStringFilterInput
+  userFirstName: TableStringFilterInput
+  userLaststName: TableStringFilterInput
+  userEmail: TableStringFilterInput
+  userPhone: TableIntFilterInput
+  userVisibility: TableStringFilterInput
+  userCognitoID: TableStringFilterInput
+}
+
+input TableFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input TableIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input TableIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input TableStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+type TagResponse {
+  itemType: String
+  id: String
+  tagName: String
+  coordinates: AWSJSON
+}

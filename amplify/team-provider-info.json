@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-talkinglandsdevampli-dev-180525-authRole",
+      "UnauthRoleArn": "arn:aws:iam::675105046435:role/amplify-talkinglandsdevampli-dev-180525-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::675105046435:role/amplify-talkinglandsdevampli-dev-180525-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-talkinglandsdevampli-dev-180525-deployment",
+      "UnauthRoleName": "amplify-talkinglandsdevampli-dev-180525-unauthRole",
+      "StackName": "amplify-talkinglandsdevampli-dev-180525",
+      "StackId": "arn:aws:cloudformation:ap-south-1:675105046435:stack/amplify-talkinglandsdevampli-dev-180525/06ad7890-c8ae-11ed-84d0-02910a581e68",
+      "AmplifyAppId": "d1sng3ymblx7ks"
+    },
+    "categories": {
+      "api": {
+        "talkinglandsdevampli": {}
+      },
+      "auth": {
+        "talkinglandsdevampli91094143": {}
+      },
+      "storage": {
+        "talkinglandsamplifybucket": {}
+      }
+    }
+  }
+}
